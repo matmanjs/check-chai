@@ -28,7 +28,7 @@ document.getElementById('start').onclick = function() {
 			text = text.replace('Did you mean', '不是Chai的API，你需要的是')
 		}
 
-		
+		document.getElementById('result').style.color = 'red'
 		document.getElementById('result').innerHTML = text;
 	}
 
