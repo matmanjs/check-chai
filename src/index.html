@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mocha</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mocha.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link href="../lib/jquery-linedtextarea.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="mocha">
+      <div class="title"></div>
+      <div class="test">
+        <textarea id="codeTextarea" class="lined"></textarea>
+        <div class="btn button orange" id="start">开始测试</div>
+      </div>
+      <div class="result">
+        <div>结果为：</div>
+        <div id="result"></div>
+      </div>
+      
+    </div>
+    <!-- <script src="mocha.js"></script> -->
+    <!-- <script>mocha.setup('bdd');</script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="../lib/jquery-linedtextarea.js"></script>
+    <!-- <script src="add.js"></script> -->
+    <script src="http://chaijs.com/chai.js"></script>
+    <script src="tests.js"></script>
+    <script>
+      $(function() {
+        $(".lined").linedtextarea(
+          {selectedLine: 1}
+        );
+      });
+    </script>
+  </body>
+</html>
