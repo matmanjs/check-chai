@@ -1,5 +1,19 @@
+h2 {
+	border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    font-size: 30px;
+    font-weight: 500;
+}
+span {
+	font-weight: bold;
+}
+a {
+	color: #da7c0c
+}
 .title {
-
+	text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
 }
 .test {
 
@@ -16,8 +30,14 @@
 .result {
 	margin-left: 15px;
 }
+.desc {
+	margin: 30px;
+}
+.docs {
+	margin-bottom: 30px;
+}
 #codeTextarea {
-	width: 80%;
+	width: 92%;
 	height: 300px;
 }
 
@@ -63,4 +83,8 @@
 	background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
 	background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+}
+
+.linedwrap {
+	width: 98%;
 }
