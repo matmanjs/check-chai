@@ -16,7 +16,7 @@ a {
     font-size: 30px;
 }
 .test {
-
+	text-align: center;
 }
 .btn {
 /*	cursor: pointer;
@@ -29,6 +29,7 @@ a {
 }
 .result {
 	margin-left: 15px;
+	text-align: center;
 }
 .desc {
 	margin: 30px;
@@ -66,6 +67,7 @@ a {
 	top: 1px;
 }
 .orange {
+	margin: 0 auto;
 	color: #fef4e9;
 	border: solid 1px #da7c0c;
 	background: #f78d1d;
