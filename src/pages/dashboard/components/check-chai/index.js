@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { Col, Row } from 'antd';
 import UseTips from './use-tips';
+import TryChaiExpect from './try-chai-expect';
 
 import './index.less';
 
@@ -14,7 +15,9 @@ export default class CheckChai extends Component {
         return (
             <div className="check-chai">
                 <Row>
-                    <Col span={24}>col-12</Col>
+                    <Col span={24}>
+                        <TryChaiExpect />
+                    </Col>
                     <Col span={24}>
                         <UseTips />
                     </Col>
