@@ -1,23 +1,22 @@
 import React, { Component } from 'react';
 
 import { Col, Row } from 'antd';
-
-import CheckChai from './components/check-chai';
+import UseTips from './use-tips';
 
 import './index.less';
 
-export default class PageDashboard extends Component {
+export default class CheckChai extends Component {
     constructor(props, context) {
         super(props, context);
     }
 
     render() {
         return (
-            <div className="page-dashboard text-content">
+            <div className="check-chai">
                 <Row>
-                    <Col span={12}>col-12</Col>
-                    <Col span={12}>
-                        <CheckChai />
+                    <Col span={24}>col-12</Col>
+                    <Col span={24}>
+                        <UseTips />
                     </Col>
                 </Row>
             </div>
