@@ -49,7 +49,7 @@ class LayoutHeader extends Component {
                     selectedKeys={[activeMenu]}
                     style={{ lineHeight: '64px' }}
                 >
-                    <Menu.Item key="home">
+                    <Menu.Item key="dashboard">
                         <NavLink to={`/dashboard`} isActive={this.handleIsActive}>工作台</NavLink>
                     </Menu.Item>
 
