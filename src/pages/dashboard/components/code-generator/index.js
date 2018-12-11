@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 
-import { Col, Input, Radio, Row } from 'antd';
+import { Col, Radio, Row } from 'antd';
 
 import './index.less';
+
+const ACTION_TYPE = {
+    EQUAL: 'equal',
+    EQL: 'eql'
+};
 
 export default class CodeGenerator extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            checkValue: 'checkValue',
-            actionType: 'equal',
+            checkValue: 'hello,world',
+            actionType: ACTION_TYPE.EQUAL,
             codeShow: ''
         };
-
     }
 
     componentDidMount() {
@@ -25,15 +29,25 @@ export default class CodeGenerator extends Component {
     };
 
     onChangeActionType = (e) => {
-        this.setState({
-            actionType: e.target.value
-        }, this.generateCode);
+        this.setState({ actionType: e.target.value }, this.generateCode);
     };
 
     generateCode() {
         const { checkValue, actionType } = this.state;
+
+        let codeShow = `${checkValue}---${actionType}`;
+
+        switch (actionType) {
+            case ACTION_TYPE.EQUAL:
+                codeShow = `expect(value).to.equal(${checkValue})`;
+                break;
+            case ACTION_TYPE.EQL:
+                codeShow = `expect(value).to.eql(${checkValue})`;
+                break;
+        }
+
         this.setState({
-            codeShow: `${checkValue}---${actionType}`
+            codeShow: codeShow
         });
     }
 
@@ -45,13 +59,27 @@ export default class CodeGenerator extends Component {
                 <Row>
                     <Col span={24}>
                         <div className="choices">
-                            <Input size="large" value={checkValue} placeholder="请输入要验证的值"
-                                   onChange={this.onChangeCheckValue} />
+                            <div className="check-value">
+                                <Radio.Group defaultValue="hello,world" buttonStyle="solid"
+                                             onChange={this.onChangeCheckValue}>
+                                    <Radio.Button value={'hello,world'}>字符串："hello,world"</Radio.Button>
+                                    <Radio.Button value={10086}>数字：10086</Radio.Button>
+                                    <Radio.Button value={'[object]'}>对象：{`{name:'matman'}`}</Radio.Button>
+                                    <Radio.Button
+                                        value={'[array]'}>数组：{`[{name:'matman'},{name:'ivweb'}]`}</Radio.Button>
+                                </Radio.Group>
+                            </div>
 
-                            <Radio.Group defaultValue="equal" buttonStyle="solid" onChange={this.onChangeActionType}>
-                                <Radio.Button value="equal">判断"原始值"相等 equal</Radio.Button>
-                                <Radio.Button value="eql">判断"对象"相等 eql</Radio.Button>
-                            </Radio.Group>
+
+                            <div className="action-type">
+                                <Radio.Group defaultValue="equal" buttonStyle="solid"
+                                             onChange={this.onChangeActionType}>
+                                    <Radio.Button value="equal">判断"原始值"相等 equal</Radio.Button>
+                                    <Radio.Button value="eql">判断"对象"相等 eql</Radio.Button>
+                                </Radio.Group>
+                            </div>
+
+
                         </div>
                     </Col>
                     <Col span={24}>
