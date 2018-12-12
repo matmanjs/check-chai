@@ -49,6 +49,8 @@ class CodeGenerator extends Component {
                                     <Radio.Button value={VAR_TYPE.NUMBER}>数字：{EXPECT_VALUE.NUMBER}</Radio.Button>
                                     <Radio.Button
                                         value={VAR_TYPE.OBJECT}>对象：{JSON.stringify(EXPECT_VALUE.OBJECT, null, 2)}</Radio.Button>
+                                    <Radio.Button
+                                        value={VAR_TYPE.ARRAY}>数组：{JSON.stringify(EXPECT_VALUE.ARRAY, null, 2)}</Radio.Button>
                                 </Radio.Group>
                             </div>
                         </div>

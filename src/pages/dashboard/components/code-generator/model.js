@@ -30,13 +30,18 @@ export const ASSERTION = {
     PROPERTY: {
         V: 'property',
         API: 'https://www.chaijs.com/api/bdd/#method_property'
+    },
+    INCLUDE: {
+        V: 'include',
+        API: 'https://www.chaijs.com/api/bdd/#method_include'
     }
 };
 
 export const VAR_TYPE = {
     STRING: 'STRING',
     NUMBER: 'NUMBER',
-    OBJECT: 'OBJECT'
+    OBJECT: 'OBJECT',
+    ARRAY: 'ARRAY'
 };
 
 export const EXPECT_VALUE = {
@@ -46,7 +51,8 @@ export const EXPECT_VALUE = {
         name: 'matman',
         age: 1,
         isPublished: true
-    }
+    },
+    ARRAY: ['a', 'B', 10086]
 };
 
 export class CodeDemo {
@@ -81,6 +87,15 @@ export class CodeDemo {
                     ...value,
                     imNotExist: true
                 } : value;
+
+                value = JSON.stringify(value, null, 2);
+                break;
+
+            case VAR_TYPE.ARRAY:
+                value = isContainNot ? [
+                    ...value,
+                    'imNotExist'
+                ] : value;
 
                 value = JSON.stringify(value, null, 2);
                 break;
