@@ -1,0 +1,48 @@
+{
+  "name": "code-generator-for-unit-testing",
+  "version": "1.0.0",
+  "description": "code generator for unit testing",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matmanjs/code-generator-for-unit-testing.git"
+  },
+  "keywords": [
+    "unit",
+    "testing"
+  ],
+  "author": "helinjiang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matmanjs/code-generator-for-unit-testing/issues"
+  },
+  "homepage": "https://github.com/matmanjs/code-generator-for-unit-testing#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "antd": "^3.6.2",
+    "classnames": "^2.2.6",
+    "devtron": "^1.4.0",
+    "lodash": "^4.17.10",
+    "osenv": "^0.1.5",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^1.1.4",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "superagent": "^3.8.3"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.7.0",
+    "react-app-rewire-less": "^2.1.1",
+    "react-app-rewired": "^1.5.2"
+  }
+}
