@@ -30,8 +30,8 @@ export const ASSERTION = {
 };
 
 export const VAR_TYPE = {
-    STRING: 'string',
-    NUMBER: 'number'
+    STRING: 'STRING',
+    NUMBER: 'NUMBER'
 };
 
 export const EXPECT_VALUE = {
@@ -52,5 +52,28 @@ export class CodeDemo {
 
         // 代码注释
         this.commend = commend;
+    }
+
+    getCodeDemo() {
+        let isContainNot = this.checkIfContainNot();
+
+        let value = EXPECT_VALUE[this.varType];
+
+        switch (this.varType) {
+            case VAR_TYPE.STRING:
+                value = isContainNot ? `'${value + value}'` : `'${value}'`;
+                break;
+            case VAR_TYPE.NUMBER:
+                value = isContainNot ? `${value * 2}` : `${value}`;
+                break;
+            default:
+                break;
+        }
+
+        return this.code.replace('value', value);
+    }
+
+    checkIfContainNot() {
+        return this.assertionList.indexOf(ASSERTION.NOT) > -1;
     }
 }

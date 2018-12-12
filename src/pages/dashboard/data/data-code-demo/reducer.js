@@ -13,7 +13,9 @@ export default function codeDemoInfo(state = initialState, action) {
     switch (type) {
         case SET_CODE_DEMO:
             update = {
-                code: data
+                code: data,
+                isSuccess: true,
+                resultMsg: ''
             };
             break;
 

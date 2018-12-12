@@ -29,7 +29,7 @@ class CodeGenerator extends Component {
             console.log('handleTryDemo(data)', data);
         }
 
-        this.props.setCodeDemo(data.code);
+        this.props.setCodeDemo(data.getCodeDemo());
     };
 
     render() {
