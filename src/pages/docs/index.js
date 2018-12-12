@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import 'github-markdown-css';
+
 import './index.less';
 
 export default class PageDocs extends Component {
@@ -9,9 +11,9 @@ export default class PageDocs extends Component {
 
     render() {
         return (
-            <div className="page-docs text-content">
+            <div className="page-docs">
 
-                <div className="html-content" dangerouslySetInnerHTML={{ __html: require('./html-content') }} />
+                <div className="markdown-body" dangerouslySetInnerHTML={{ __html: require('./html-content') }} />
 
             </div>
         );
