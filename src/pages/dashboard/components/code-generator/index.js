@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import { Col, Radio, Row } from 'antd';
 
@@ -6,10 +7,11 @@ import { getCodeDemoList } from './data';
 import { VAR_TYPE } from './model';
 
 import CodeDemoList from './code-demo-list';
+import { setCodeDemo } from '../../data/data-code-demo';
 
 import './index.less';
 
-export default class CodeGenerator extends Component {
+class CodeGenerator extends Component {
     constructor(props) {
         super(props);
 
@@ -27,6 +29,7 @@ export default class CodeGenerator extends Component {
             console.log('handleTryDemo(data)', data);
         }
 
+        this.props.setCodeDemo(data.code);
     };
 
     render() {
@@ -57,3 +60,17 @@ export default class CodeGenerator extends Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return state;
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        setCodeDemo(code) {
+            return dispatch(setCodeDemo(code));
+        }
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CodeGenerator);
