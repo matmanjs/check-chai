@@ -18,6 +18,14 @@ export const ASSERTION = {
     LENGTH_OF: {
         V: 'lengthOf',
         API: 'https://www.chaijs.com/api/bdd/#method_lengthof'
+    },
+    ABOVE: {
+        V: 'above',
+        API: 'https://www.chaijs.com/api/bdd/#method_above'
+    },
+    LEAST: {
+        V: 'least',
+        API: 'https://www.chaijs.com/api/bdd/#method_least'
     }
 };
 

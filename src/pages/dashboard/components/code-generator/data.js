@@ -10,7 +10,9 @@ export const CODE_STRING_LIST = [
 export const CODE_NUMBER_LIST = [
     new CodeDemo(VAR_TYPE.NUMBER, ASSERTION.A, `expect(value).to.be.a('number')`, '为数字类型'),
     new CodeDemo(VAR_TYPE.NUMBER, ASSERTION.EQUAL, `expect(value).to.equal(${EXPECT_VALUE.NUMBER})`, '相等'),
-    new CodeDemo(VAR_TYPE.NUMBER, [ASSERTION.EQUAL, ASSERTION.NOT], `expect(value).to.not.equal(${EXPECT_VALUE.NUMBER})`, '不相等')
+    new CodeDemo(VAR_TYPE.NUMBER, [ASSERTION.EQUAL, ASSERTION.NOT], `expect(value).to.not.equal(${EXPECT_VALUE.NUMBER})`, '不相等'),
+    new CodeDemo(VAR_TYPE.NUMBER, ASSERTION.ABOVE, `expect(value).to.be.above(10085)`, '大于某个值(推荐用 equal)'),
+    new CodeDemo(VAR_TYPE.NUMBER, ASSERTION.LEAST, `expect(value).to.be.at.least(10086)`, '大于或等于某个值(推荐用 equal)')
 ];
 
 export function getCodeDemoList(varType) {
