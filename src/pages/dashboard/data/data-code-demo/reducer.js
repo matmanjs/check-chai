@@ -1,7 +1,7 @@
 import { SET_CODE_DEMO, SET_EXECUTE_CODE_RESULT } from './action';
 
 const initialState = {
-    code: '',
+    code: 'expect(4 + 5).to.equal(9)',
     isSuccess: true,
     resultMsg: ''
 };

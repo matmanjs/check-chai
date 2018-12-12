@@ -32,7 +32,7 @@ export default function CheckChaiUseTips() {
                 <p>头部是<code>expect</code>方法，尾部是断言方法，比如<code>equal、a/an、ok、match</code>等。两者之间使用<code>to</code>或<code>to.be</code>连接
                 </p>
                 <p>例如：</p>
-                <p><code>expect(4 + 5).to.be.equal(9);</code> // 4加5应该等于9</p>
+                <p><code>expect(4 + 5).to.equal(9);</code> // 4加5应该等于9</p>
             </div>
         </div>
     );

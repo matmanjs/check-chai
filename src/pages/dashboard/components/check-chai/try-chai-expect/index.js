@@ -2,15 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { Alert, Button } from 'antd';
-import chai from 'chai';
 
 import { executeCode, setCodeDemo } from '../../../data/data-code-demo';
 
 import './index.less';
-
-// 将其挂载在全局
-window.chai = chai;
-window.expect = chai.expect;
 
 class TryChaiExpect extends Component {
     handleChange = (event) => {
