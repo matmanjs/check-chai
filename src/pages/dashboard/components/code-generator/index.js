@@ -22,6 +22,13 @@ export default class CodeGenerator extends Component {
         this.setState({ varType: e.target.value });
     };
 
+    handleTryDemo = (data) => {
+        if (process.env.NODE_ENV !== 'production') {
+            console.log('handleTryDemo(data)', data);
+        }
+
+    };
+
     render() {
         const { varType } = this.state;
 
@@ -42,7 +49,7 @@ export default class CodeGenerator extends Component {
                     </Col>
                     <Col span={24}>
                         <div className="code">
-                            <CodeDemoList list={list} />
+                            <CodeDemoList list={list} tryDemo={this.handleTryDemo} />
                         </div>
                     </Col>
                 </Row>
