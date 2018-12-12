@@ -5,9 +5,8 @@ import { NavLink } from 'react-router-dom';
 import './index.less';
 
 class LayoutHeader extends Component {
-
-    constructor(props, context) {
-        super(props, context);
+    constructor(props) {
+        super(props);
 
         this.state = {
             activeMenu: '',
@@ -23,7 +22,8 @@ class LayoutHeader extends Component {
 
         const map = {
             '/': 'dashboard',
-            '/dashboard': 'dashboard'
+            '/dashboard': 'dashboard',
+            '/docs': 'docs'
         };
 
         let newMenuId = map[curMenu.url];
@@ -51,6 +51,10 @@ class LayoutHeader extends Component {
                 >
                     <Menu.Item key="dashboard">
                         <NavLink to={`/dashboard`} isActive={this.handleIsActive}>工作台</NavLink>
+                    </Menu.Item>
+
+                    <Menu.Item key="docs">
+                        <NavLink to={`/docs`} isActive={this.handleIsActive}>文档</NavLink>
                     </Menu.Item>
 
                 </Menu>

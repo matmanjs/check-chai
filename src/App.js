@@ -6,6 +6,7 @@ import { Layout } from 'antd';
 import LayoutHeader from './components/layout-header';
 
 import Dashboard from './pages/dashboard';
+import Docs from './pages/docs';
 
 import './App.less';
 
@@ -26,6 +27,7 @@ export default class App extends Component {
                         <Switch>
                             <Redirect exact from="/" to={`/dashboard`} />
                             <Route path={`/dashboard`} component={Dashboard} />
+                            <Route path={`/docs`} component={Docs} />
                         </Switch>
                     </Layout.Content>
 
