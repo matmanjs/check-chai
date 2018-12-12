@@ -10,35 +10,40 @@ export default class PageDocs extends Component {
     render() {
         return (
             <div className="page-docs text-content">
-                <div className="docs">
-                    <h2 className="docs-title">文档</h2>
-                    <dl>
-                        <dt>官网</dt>
-                        <dd><a href="http://www.chaijs.com/">http://www.chaijs.com/</a></dd>
-                    </dl>
-                    <dl>
-                        <dt>API</dt>
-                        <dd><a href="http://www.chaijs.com/api/">http://www.chaijs.com/api/</a></dd>
-                    </dl>
-                    <dl>
-                        <dt>中文API</dt>
-                        <dd><a href="https://www.jianshu.com/p/f200a75a15d2">https://www.jianshu.com/p/f200a75a15d2</a></dd>
-                    </dl>
-                </div>
+                <h1>Mocha + Chai 在项目中的使用</h1>
 
-                <div className="docs">
-                    <h2 className="docs-title">使用规范</h2>
-                    <p><code>chai.js</code> 是一套TDD(测试驱动开发)/BDD(行为驱动开发)的断言库。</p>
-                    <p><code>BDD</code>，行为驱动开发（注重测试逻辑），<code>TDD</code>是测试驱动开发（注重输出结果）。</p>
+                <section>
+                    <h2 className="docs-title">1. 快速接入单元测试</h2>
 
-                    <p>使用时需要先引入断言库：</p>
-                    <p><code>var expect = require('chai').expect;</code></p>
-                    <p><code>expect</code>断言的写法都是一样的。</p>
-                    <p>头部是<code>expect</code>方法，尾部是断言方法，比如<code>equal、a/an、ok、match</code>等。两者之间使用<code>to</code>或<code>to.be</code>连接
-                    </p>
-                    <p>例如：</p>
-                    <p><code>expect(4 + 5).to.equal(9);</code> // 4加5应该等于9</p>
-                </div>
+                    <p>第一步，需要在项目中引入 mocha 和 chai</p>
+                    <pre><code>
+                        $ npm install mocha chai --save-dev
+                    </code></pre>
+
+                    <p>第二步，新建 <code>test</code> 目录，并新增一个测试文件，例如 <code>xxx.test.js</code> ，文件中增加测试代码：</p>
+                    <pre><code>
+                        const expect = require('chai').expect;
+
+
+                        {/*describe('use expect: src/add.js', () => {*/}
+                            {/*it('add(1,2) === 3', () => {*/}
+                                {/*expect(4 + 5).to.equal(9);*/}
+                            {/*});*/}
+                        {/*});*/}
+                    </code></pre>
+
+                    <p>最后一步，在 <code>package.json</code> 增加 <code>scripts</code></p>
+                </section>
+
+                <section>
+                    <h2 className="docs-title">2. 参考资料</h2>
+                    <ul>
+                        <li>chai API： <a href="http://www.chaijs.com/api/">http://www.chaijs.com/api/</a></li>
+                        <li>中文 chai API: <a
+                            href="https://www.jianshu.com/p/f200a75a15d2">https://www.jianshu.com/p/f200a75a15d2</a>
+                        </li>
+                    </ul>
+                </section>
             </div>
         );
     }
