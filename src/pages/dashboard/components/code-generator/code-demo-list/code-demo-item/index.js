@@ -14,7 +14,13 @@ export default function CodeDemoItem(props) {
                 <pre><code>{data.code}</code></pre>
             </div>
             <div className="api">
-                参考 API: <Button type="primary" href={data.assertion.API} target="_blank">{data.assertion.V}</Button></div>
+                参考 API:
+                {
+                    data.assertionList.map((item, index) => {
+                        return <Button type="primary" href={item.API} target="_blank" key={index}>{item.V}</Button>
+                    })
+                }
+            </div>
         </div>
     );
 }

@@ -1,4 +1,8 @@
 export const ASSERTION = {
+    NOT: {
+        V: 'not',
+        API: 'https://www.chaijs.com/api/bdd/#method_not'
+    },
     A: {
         V: 'a',
         API: 'https://www.chaijs.com/api/bdd/#method_a'
@@ -32,8 +36,8 @@ export class CodeDemo {
         // 需要检查的变量类型
         this.varType = varType;
 
-        // 断言语法
-        this.assertion = assertion;
+        // 涉及到的断言方法
+        this.assertionList = Array.isArray(assertion) ? assertion : [assertion];
 
         // 代码
         this.code = code;
