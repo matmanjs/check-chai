@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { Col, Radio, Row } from 'antd';
 
 import './index.less';
-import { CODE_STRING_LIST } from './data';
 
 const ACTION_TYPE = {
     EQUAL: 'equal',
@@ -87,9 +86,6 @@ export default class CodeGenerator extends Component {
                         <div className="code">
                             已输入值：{checkValue}
                             <textarea rows={30} value={codeShow} readOnly />
-                            {
-                                JSON.stringify(CODE_STRING_LIST, null, 2)
-                            }
                         </div>
                     </Col>
                 </Row>
