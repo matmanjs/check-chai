@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Card, Col, Divider, Radio, Row } from 'antd';
 
 import { getCodeDemoList } from './data';
-import { VAR_TYPE } from './model';
+import { EXPECT_VALUE, VAR_TYPE } from './model';
 
 import CodeDemoList from './code-demo-list';
 import { setCodeDemo } from '../../data/data-code-demo';
@@ -45,8 +45,10 @@ class CodeGenerator extends Component {
                         <div className="choices">
                             <div className="check-value">
                                 <Radio.Group defaultValue={varType} buttonStyle="solid" onChange={this.onChangeVarType}>
-                                    <Radio.Button value={VAR_TYPE.STRING}>字符串："matman"</Radio.Button>
-                                    <Radio.Button value={VAR_TYPE.NUMBER}>数字：10086</Radio.Button>
+                                    <Radio.Button value={VAR_TYPE.STRING}>字符串："{EXPECT_VALUE.STRING}"</Radio.Button>
+                                    <Radio.Button value={VAR_TYPE.NUMBER}>数字：{EXPECT_VALUE.NUMBER}</Radio.Button>
+                                    <Radio.Button
+                                        value={VAR_TYPE.OBJECT}>对象：{JSON.stringify(EXPECT_VALUE.OBJECT, null, 2)}</Radio.Button>
                                 </Radio.Group>
                             </div>
                         </div>

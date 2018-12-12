@@ -31,12 +31,18 @@ export const ASSERTION = {
 
 export const VAR_TYPE = {
     STRING: 'STRING',
-    NUMBER: 'NUMBER'
+    NUMBER: 'NUMBER',
+    OBJECT: 'OBJECT'
 };
 
 export const EXPECT_VALUE = {
     STRING: 'matman',
-    NUMBER: 10086
+    NUMBER: 10086,
+    OBJECT: {
+        name: 'matman',
+        age: 1,
+        isPublished: true
+    }
 };
 
 export class CodeDemo {
@@ -65,6 +71,14 @@ export class CodeDemo {
                 break;
             case VAR_TYPE.NUMBER:
                 value = isContainNot ? `${value * 2}` : `${value}`;
+                break;
+            case VAR_TYPE.OBJECT:
+                value = isContainNot ? {
+                    ...value,
+                    imNotExist: true
+                } : value;
+
+                value = JSON.stringify(value, null, 2);
                 break;
             default:
                 break;

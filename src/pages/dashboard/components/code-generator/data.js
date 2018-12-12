@@ -14,6 +14,11 @@ export const CODE_NUMBER_LIST = [
     new CodeDemo(VAR_TYPE.NUMBER, ASSERTION.ABOVE, `expect(value).to.be.above(${EXPECT_VALUE.NUMBER - 1})`, '大于某个值(推荐用 equal)'),
     new CodeDemo(VAR_TYPE.NUMBER, ASSERTION.LEAST, `expect(value).to.be.at.least(${EXPECT_VALUE.NUMBER})`, '大于或等于某个值(推荐用 equal)')
 ];
+export const CODE_OBJECT_LIST = [
+    new CodeDemo(VAR_TYPE.OBJECT, ASSERTION.A, `expect(value).to.be.a('object')`, '为对象类型'),
+    new CodeDemo(VAR_TYPE.OBJECT, ASSERTION.EQL, `expect(value).to.eql(${JSON.stringify(EXPECT_VALUE.OBJECT)})`, '相等'),
+    new CodeDemo(VAR_TYPE.OBJECT, [ASSERTION.EQL, ASSERTION.NOT], `expect(value).to.not.eql(${JSON.stringify(EXPECT_VALUE.OBJECT)})`, '不相等')
+];
 
 export function getCodeDemoList(varType) {
     let list = [];
@@ -25,6 +30,10 @@ export function getCodeDemoList(varType) {
 
         case VAR_TYPE.NUMBER:
             list = CODE_NUMBER_LIST;
+            break;
+
+        case VAR_TYPE.OBJECT:
+            list = CODE_OBJECT_LIST;
             break;
 
         default:
