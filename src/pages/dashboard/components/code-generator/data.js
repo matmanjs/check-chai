@@ -17,7 +17,9 @@ export const CODE_NUMBER_LIST = [
 export const CODE_OBJECT_LIST = [
     new CodeDemo(VAR_TYPE.OBJECT, ASSERTION.A, `expect(value).to.be.a('object')`, '为对象类型'),
     new CodeDemo(VAR_TYPE.OBJECT, ASSERTION.EQL, `expect(value).to.eql(${JSON.stringify(EXPECT_VALUE.OBJECT)})`, '相等'),
-    new CodeDemo(VAR_TYPE.OBJECT, [ASSERTION.EQL, ASSERTION.NOT], `expect(value).to.not.eql(${JSON.stringify(EXPECT_VALUE.OBJECT)})`, '不相等')
+    new CodeDemo(VAR_TYPE.OBJECT, [ASSERTION.EQL, ASSERTION.NOT], `expect(value).to.not.eql(${JSON.stringify(EXPECT_VALUE.OBJECT)})`, '不相等'),
+    new CodeDemo(VAR_TYPE.OBJECT, ASSERTION.PROPERTY, `expect(value).to.have.property('name')`, '是否包含某个属性'),
+    new CodeDemo(VAR_TYPE.OBJECT, ASSERTION.PROPERTY, `expect(value).to.have.property('name','matman')`, '是否包含某个属性且等于指定值')
 ];
 
 export function getCodeDemoList(varType) {

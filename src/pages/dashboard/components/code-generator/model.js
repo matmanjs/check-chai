@@ -26,6 +26,10 @@ export const ASSERTION = {
     LEAST: {
         V: 'least',
         API: 'https://www.chaijs.com/api/bdd/#method_least'
+    },
+    PROPERTY: {
+        V: 'property',
+        API: 'https://www.chaijs.com/api/bdd/#method_property'
     }
 };
 
