@@ -26,17 +26,33 @@ export const ASSERTION = {
     LEAST: {
         V: 'least',
         API: 'https://www.chaijs.com/api/bdd/#method_least'
+    },
+    PROPERTY: {
+        V: 'property',
+        API: 'https://www.chaijs.com/api/bdd/#method_property'
+    },
+    INCLUDE: {
+        V: 'include',
+        API: 'https://www.chaijs.com/api/bdd/#method_include'
     }
 };
 
 export const VAR_TYPE = {
     STRING: 'STRING',
-    NUMBER: 'NUMBER'
+    NUMBER: 'NUMBER',
+    OBJECT: 'OBJECT',
+    ARRAY: 'ARRAY'
 };
 
 export const EXPECT_VALUE = {
     STRING: 'matman',
-    NUMBER: 10086
+    NUMBER: 10086,
+    OBJECT: {
+        name: 'matman',
+        age: 1,
+        isPublished: true
+    },
+    ARRAY: ['a', 'B', 10086]
 };
 
 export class CodeDemo {
@@ -65,6 +81,23 @@ export class CodeDemo {
                 break;
             case VAR_TYPE.NUMBER:
                 value = isContainNot ? `${value * 2}` : `${value}`;
+                break;
+            case VAR_TYPE.OBJECT:
+                value = isContainNot ? {
+                    ...value,
+                    imNotExist: true
+                } : value;
+
+                value = JSON.stringify(value, null, 2);
+                break;
+
+            case VAR_TYPE.ARRAY:
+                value = isContainNot ? [
+                    ...value,
+                    'imNotExist'
+                ] : value;
+
+                value = JSON.stringify(value, null, 2);
                 break;
             default:
                 break;

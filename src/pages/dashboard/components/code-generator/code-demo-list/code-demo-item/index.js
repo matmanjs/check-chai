@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Button, Col, Row } from 'antd';
+import { Button, Col, message, Row } from 'antd';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import './index.less';
 
@@ -10,7 +11,7 @@ export default function CodeDemoItem(props) {
     return (
         <div className="code-demo-item">
             <Row>
-                <Col span={20}>
+                <Col span={18}>
                     <div className="code">
                         <pre>
                             <p className="recommend">// {data.commend}</p>
@@ -27,10 +28,16 @@ export default function CodeDemoItem(props) {
                         }
                     </div>
                 </Col>
-                <Col span={4}>
+                <Col span={6}>
 
                     <div className="action">
-                        <Button onClick={tryDemo.bind(this, data)}>试一试</Button>
+                        <Button onClick={tryDemo.bind(this, data)} type="primary" ghost>试一试</Button>
+                        <CopyToClipboard text={data.code}
+                                         onCopy={() => {
+                                             message.success('拷贝成功！' + data.code);
+                                         }}>
+                            <Button>拷贝代码</Button>
+                        </CopyToClipboard>
                     </div>
                 </Col>
             </Row>
