@@ -21,8 +21,6 @@ class TryChaiExpect extends Component {
 
         return (
             <div className="try-chai-expect">
-                <h2>使用 chai 的 expect 断言语法测试</h2>
-
                 <textarea rows={10} value={code} onChange={this.handleChange} />
                 <Button type="primary" onClick={this.handleSubmit}>开始测试</Button>
 

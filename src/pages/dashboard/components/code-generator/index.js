@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { Col, Radio, Row } from 'antd';
+import { Card, Col, Divider, Radio, Row } from 'antd';
 
 import { getCodeDemoList } from './data';
 import { VAR_TYPE } from './model';
@@ -41,6 +41,7 @@ class CodeGenerator extends Component {
             <div className="code-generator">
                 <Row>
                     <Col span={24}>
+                        <h2>1. 请选择测试目标的类型</h2>
                         <div className="choices">
                             <div className="check-value">
                                 <Radio.Group defaultValue={varType} buttonStyle="solid" onChange={this.onChangeVarType}>
@@ -49,11 +50,12 @@ class CodeGenerator extends Component {
                                 </Radio.Group>
                             </div>
                         </div>
+                        <Divider />
                     </Col>
                     <Col span={24}>
-                        <div className="code">
+                        <Card title={'常用的断言写法'} bordered={true} className="code">
                             <CodeDemoList list={list} tryDemo={this.handleTryDemo} />
-                        </div>
+                        </Card>
                     </Col>
                 </Row>
             </div>

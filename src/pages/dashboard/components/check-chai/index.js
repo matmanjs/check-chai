@@ -7,8 +7,8 @@ import TryChaiExpect from './try-chai-expect';
 import './index.less';
 
 export default class CheckChai extends Component {
-    constructor(props, context) {
-        super(props, context);
+    constructor(props) {
+        super(props);
     }
 
     render() {
@@ -16,6 +16,7 @@ export default class CheckChai extends Component {
             <div className="check-chai">
                 <Row>
                     <Col span={24}>
+                        <h2>2. 试一试</h2>
                         <TryChaiExpect />
                     </Col>
                     <Col span={24}>
