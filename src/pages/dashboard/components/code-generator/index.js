@@ -5,6 +5,8 @@ import { Col, Radio, Row } from 'antd';
 import './index.less';
 import { CODE_STRING_LIST } from './data';
 
+import CodeDemoList from './code-demo-list';
+
 const ACTION_TYPE = {
     EQUAL: 'equal',
     EQL: 'eql'
@@ -86,10 +88,8 @@ export default class CodeGenerator extends Component {
                     <Col span={24}>
                         <div className="code">
                             已输入值：{checkValue}
-                            <textarea rows={30} value={codeShow} readOnly />
-                            {
-                                JSON.stringify(CODE_STRING_LIST, null, 2)
-                            }
+                            <textarea rows={3} value={codeShow} readOnly />
+                            <CodeDemoList list={CODE_STRING_LIST} />
                         </div>
                     </Col>
                 </Row>
