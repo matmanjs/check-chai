@@ -2,60 +2,30 @@ import React, { Component } from 'react';
 
 import { Col, Radio, Row } from 'antd';
 
-import './index.less';
-import { CODE_STRING_LIST } from './data';
+import { getCodeDemoList } from './data';
+import { VAR_TYPE } from './model';
 
 import CodeDemoList from './code-demo-list';
 
-const ACTION_TYPE = {
-    EQUAL: 'equal',
-    EQL: 'eql'
-};
+import './index.less';
 
 export default class CodeGenerator extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            checkValue: 'hello,world',
-            actionType: ACTION_TYPE.EQUAL,
-            codeShow: ''
+            varType: VAR_TYPE.STRING
         };
     }
 
-    componentDidMount() {
-        this.generateCode();
-    }
-
-    onChangeCheckValue = (e) => {
-        this.setState({ checkValue: e.target.value }, this.generateCode);
+    onChangeVarType = (e) => {
+        this.setState({ varType: e.target.value });
     };
-
-    onChangeActionType = (e) => {
-        this.setState({ actionType: e.target.value }, this.generateCode);
-    };
-
-    generateCode() {
-        const { checkValue, actionType } = this.state;
-
-        let codeShow = `${checkValue}---${actionType}`;
-
-        switch (actionType) {
-            case ACTION_TYPE.EQUAL:
-                codeShow = `expect(value).to.equal(${checkValue})`;
-                break;
-            case ACTION_TYPE.EQL:
-                codeShow = `expect(value).to.eql(${checkValue})`;
-                break;
-        }
-
-        this.setState({
-            codeShow: codeShow
-        });
-    }
 
     render() {
-        const { checkValue, codeShow } = this.state;
+        const { varType } = this.state;
+
+        const list = getCodeDemoList(varType);
 
         return (
             <div className="code-generator">
@@ -63,33 +33,16 @@ export default class CodeGenerator extends Component {
                     <Col span={24}>
                         <div className="choices">
                             <div className="check-value">
-                                <Radio.Group defaultValue="hello,world" buttonStyle="solid"
-                                             onChange={this.onChangeCheckValue}>
-                                    <Radio.Button value={'hello,world'}>字符串："hello,world"</Radio.Button>
-                                    <Radio.Button value={10086}>数字：10086</Radio.Button>
-                                    <Radio.Button value={'[object]'}>对象：{`{name:'matman'}`}</Radio.Button>
-                                    <Radio.Button
-                                        value={'[array]'}>数组：{`[{name:'matman'},{name:'ivweb'}]`}</Radio.Button>
+                                <Radio.Group defaultValue={varType} buttonStyle="solid" onChange={this.onChangeVarType}>
+                                    <Radio.Button value={VAR_TYPE.STRING}>字符串："matman"</Radio.Button>
+                                    <Radio.Button value={VAR_TYPE.NUMBER}>数字：10086</Radio.Button>
                                 </Radio.Group>
                             </div>
-
-
-                            <div className="action-type">
-                                <Radio.Group defaultValue="equal" buttonStyle="solid"
-                                             onChange={this.onChangeActionType}>
-                                    <Radio.Button value="equal">判断"原始值"相等 equal</Radio.Button>
-                                    <Radio.Button value="eql">判断"对象"相等 eql</Radio.Button>
-                                </Radio.Group>
-                            </div>
-
-
                         </div>
                     </Col>
                     <Col span={24}>
                         <div className="code">
-                            已输入值：{checkValue}
-                            <textarea rows={3} value={codeShow} readOnly />
-                            <CodeDemoList list={CODE_STRING_LIST} />
+                            <CodeDemoList list={list} />
                         </div>
                     </Col>
                 </Row>
