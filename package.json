@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/matmanjs/code-generator-for-unit-testing/issues"
   },
-  "homepage": "https://github.com/matmanjs/code-generator-for-unit-testing#readme",
+  "homepage": "/code-generator-for-unit-testing/",
   "dependencies": {
     "antd": "^3.6.2",
     "chai": "^4.2.0",
