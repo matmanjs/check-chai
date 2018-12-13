@@ -16,8 +16,9 @@ export default function CheckChaiUseTips() {
 
                 <h2 className="docs-title">相关链接</h2>
                 <ul>
-                    <li>chai API： <a href="http://www.chaijs.com/api/">http://www.chaijs.com/api/</a></li>
+                    <li>chai API： <a href="http://www.chaijs.com/api/" target="_blank">http://www.chaijs.com/api/</a></li>
                     <li><NavLink to={`/docs`}> 更多文档说明 </NavLink></li>
+                    <li>本项目 ISSUE： <a href="https://github.com/matmanjs/code-generator-for-unit-testing/issues" target="_blank">https://github.com/matmanjs/code-generator-for-unit-testing/issues</a></li>
                 </ul>
             </div>
         </div>
