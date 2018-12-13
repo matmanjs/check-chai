@@ -20,7 +20,7 @@ npm start
 
 我们将样例部署到了 [GitHub Pages](https://pages.github.com/) ，地址为： https://matmanjs.github.io/code-generator-for-unit-testing/ 。
 
-需要运行以下命令构建到 `docs` 文件夹下
+需要运行以下命令构建到 `docs` 文件夹下，并提交到 git 仓库中。
 
 ```bash
 npm run deploy
